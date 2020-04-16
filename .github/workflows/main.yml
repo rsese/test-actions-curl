@@ -25,4 +25,4 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: curl https://api.github.com/repos/nytimes/covid-19-data/commits?path=us-counties.csv
       run: |
-        curl -v https://api.github.com/repos/nytimes/covid-19-data/commits?path=us-counties.csv
+        curl -v -H "Authorization: bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/nytimes/covid-19-data/commits?path=us-counties.csv
